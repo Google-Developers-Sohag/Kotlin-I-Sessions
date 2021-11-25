@@ -1,4 +1,4 @@
-package sessionOne
+package kotlinSessions
 
 /**
  * The main method is the entry point for any application in almost all
