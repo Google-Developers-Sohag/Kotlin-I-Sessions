@@ -49,7 +49,8 @@ fun main() {
     // a Double is either a +ve or -ve real number of 64-bit storage
     val positiveDouble: Double = 2.2314141241241421414
 
-    // unsigned integers are either +ve nor -ve ones
+    // unsigned integers are neither +ve nor -ve numbers 
+    // common examples are age, device vendors, phone numbers, serial numbers, music duration and battery percentage
     var unsignedInt: UInt = 20u
     unsignedInt += 2u
     println(unsignedInt)
@@ -252,7 +253,7 @@ fun main() {
         (4) -> {
             println("Input was 4")
         }
-        (4) -> {
+        (200) -> {
             println("Input was 200")
         }
     }
