@@ -49,7 +49,7 @@ fun main() {
     val positiveDouble: Double = 2.2314141241241421414
 
     // unsigned integers are either +ve nor -ve ones
-    var unsignedInt : UInt = 20u
+    var unsignedInt: UInt = 20u
     unsignedInt += 2u
     println(unsignedInt)
 
@@ -74,7 +74,6 @@ fun main() {
     //-----------------------------------------------------------------------------------------------
 
 
-
     //----------------------------------------Comments in kotlin---------------------------------------------
 
     // Comments represent non-compilable and non-executable code
@@ -91,7 +90,6 @@ fun main() {
     //-------------------------------------------------------------------------------------------------------
 
 
-
     //---------------------------------------Casting between data types---------------------------------------------
 
     // casting is converting from a data type to another data type
@@ -105,7 +103,6 @@ fun main() {
     val convertMyNumber: String = myNumber.toString()
 
     //--------------------------------------------------------------------------------------------------------------
-
 
 
     //---------------------------------------Exercise---------------------------------------------
@@ -162,7 +159,7 @@ fun main() {
     println("Product = $product")
 
     // multiplication will be done before addition
-    val multiplicativeProperty: Int  = (x * y) + 1
+    val multiplicativeProperty: Int = (x * y) + 1
     println("Result = $multiplicativeProperty")
 
     val division: Int = 4 / 2
@@ -176,7 +173,6 @@ fun main() {
     // 'x = x + 1' at the next line
 
     //-----------------------------------------------------------------------------------------------------
-
 
 
     //--------------------------------------- Boolean Algebra ---------------------------------------------
@@ -201,7 +197,6 @@ fun main() {
     println(!probability0)
 
     //---------------------------------------------------------------------------------------------
-
 
 
     //--------------------------------------- Operand Operations ---------------------------------------------
@@ -244,11 +239,12 @@ fun main() {
         println("Worker")
     }
 
-    // 2) when is used for checking for a specific case, if this case is equal to the input
+    // 2) when is to check for a specific case, if this case is equal to the input
     // then execution of that block would take place
     // Syntax
     val input: Int = 200
     when (input) {
+        // if input equals to 3 then execute this block
         (3) -> {
             println("Input was 3")
         }
@@ -272,7 +268,7 @@ fun main() {
         }
     }
 
-    // 4) loops, a loop is a block which is designed to be of repeated execution
+    // 4) loops, a loop is a block which is designed to be of a repeated execution
     // so instead of saying
     // println(x + 1)
     // println(x + 1)
@@ -287,7 +283,7 @@ fun main() {
     // do while loop is the same as while loop but the first condition is a mandatory condition (ie is executed even if the condition is not true)
     println("Test do while loop")
     i = 0
-    do{
+    do {
         i = i + 1
         println(i)
     } while (i > 2)
@@ -296,7 +292,7 @@ fun main() {
     // in this example we have a list of names
     val array = listOf("Ahmed", "Pavly", "Nabil")
     // a for-each loop  is used to loop over a list and display its items
-    for(name in array){
+    for (name in array) {
         println(name)
     }
 
@@ -343,7 +339,7 @@ fun main() {
         // when we divide a number by zero, the program skips the lines after this operation and enters the catch() block
         // a throws a math error message
         result = number1 / number0
-    } catch (e: ArithmeticException){
+    } catch (e: ArithmeticException) {
         println("Math Error")
     }
     //-----------------------------------------------------------------------------------------
