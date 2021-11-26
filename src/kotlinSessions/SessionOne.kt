@@ -332,7 +332,7 @@ fun main() {
     //---------------------------------------------------------------------------------------------------------
 
 
-    //---------------------------------------- An introduction Exception Handling -------------------------------------------------
+    //---------------------------------------- An introduction to Exception Handling -------------------------------------------------
     // Exception handling is used to control the flow of your program if an un-accepted action takes place
     // for example : dividing a number by zero would result in a ArithmeticException which is the same
     // as the math error message you see in your calculator
