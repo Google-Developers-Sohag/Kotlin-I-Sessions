@@ -24,7 +24,7 @@ fun main() {
 
     //---------------------------------------Basic Types---------------------------------------------
 
-    // var is a changeable data
+    // var is a changeable data (variable data)
     // val is an unchangeable data (constant data)
 
     // an integer is either a +ve or -ve non-fractional 32-bit number
