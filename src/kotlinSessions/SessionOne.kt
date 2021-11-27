@@ -18,7 +18,7 @@ fun main() {
     //-------------------------------------------------------------------------------------------------
 
 
-    // printing things onto your screen
+    // printing things onto your screen -- output message to the console
     println("Welcome to our lovely course !")
 
 
@@ -203,10 +203,24 @@ fun main() {
 
     //--------------------------------------- Operand Operations ---------------------------------------------
 
-    // Operand Operations are operations that involve using '==' for operand equal, '>=' for bigger than or equal and '<=' for less than or equal
+    // Operand Operations are operations that involve using '==' for operand equal, '!=' for operand not equal
+    // '>=' for bigger than or equal and '<=' for less than or equal
     // to compare between numbers, the result is a boolean expression
     val condition: Boolean = 1 >= 2
     println("Test operand bigger than or equal : $condition")
+
+    // the not equal operand
+    val condition2: Boolean = 1 != 2
+    println("Is 1 not equal to 2 ? $condition2")
+
+    // the result is false, because simply the two numbers are equal
+    val condition3: Boolean = 10 != 10
+    println("Is 10 not equal to 10 ? $condition3")
+
+    // the equal operand
+    val conditionB: Boolean = 1 == 1
+    println("Is 1 equal to 1 ? $conditionB")
+
     var age: UInt = 20u
     // checks whether this age is a university student age
     val isStudent: Boolean = age >= 20u
@@ -270,63 +284,6 @@ fun main() {
         }
     }
 
-    // 4) loops, a loop is a block which is designed to be of a repeated execution
-    // so instead of saying
-    // println(x + 1)
-    // println(x + 1)
-    // we would commonly say
-    println("Test while loop")
-    var i: Int = 0
-    while (i < 2) {
-        i = i + 1
-        println(i)
-    }
-
-    // do while loop is the same as while loop but the first condition is a mandatory condition (ie is executed even if the condition is not true)
-    println("Test do while loop")
-    i = 0
-    do {
-        i = i + 1
-        println(i)
-    } while (i > 2)
-
-    // we can have a list of any data type
-    // in this example we have a list of names
-    val array = listOf("Ahmed", "Pavly", "Nabil")
-    // a for-each loop  is used to loop over a list and display its items
-    for (name in array) {
-        println(name)
-    }
-
-    // 5) Ranges, a range define an interval with a lowest value and a highest value in an array
-    // a range from 1 to 5
-    val range = 1..5
-    // test for loop with a step factor 1 in the range from 1 to 5
-    for (number in range step 1) {
-        println(number)
-    }
-
-    // 6) Jump statements
-    // break is used to stop the loop block from running
-    for (number in range step 1) {
-        println("Before break")
-        if (number > 3) {
-            // stops looping
-            break
-        }
-        println("After break")
-    }
-
-    // continue is used to skip the lines after it and continue looping
-    for (number in range step 1) {
-        println("Before continue")
-        if (number > 3) {
-            // skips the lines after it and continue looping
-            continue
-        }
-        println("After continue")
-    }
-
     //---------------------------------------------------------------------------------------------------------
 
 
@@ -345,5 +302,49 @@ fun main() {
         println("Math Error")
     }
     //-----------------------------------------------------------------------------------------
+
+    //-----------------------------------------Dealing with console----------------------------------------------
+
+    // Dealing with console : means accepting user input from the console and sending output messages back to the
+    // console
+
+    // to send a message to the console use as we have described before
+    println("A message to the console")
+
+    // to receive user input from the console -- use readLine()
+    // String? -> is the 'nullable' sign -> means that the input may be unavailable or blank
+    val uInput: String? = readLine()
+    println("My message was $uInput")
+
+    //-------------------------------------------------------------------------------------------------------------
+
+
+    //---------------------------------------Operations and console io---------------------------------------------
+    println()
+    print("Enter first number : ")
+    val firstNumber: String? = readLine()
+
+    println()
+    print("Enter second number : ")
+    val secondNumber: String? = readLine()
+
+    println()
+
+    //-----Processing the input-----
+    // as we have discussed before, the try catch is used to try some tasks and catch an unaccepted actions
+    // in this case : the un-accepted action would be if the user has inputted nothing or letters or any non number formats
+    // the exception type which is thrown here is the NumberFormatException
+    try {
+        // null-checking : if a value is null then it represents nothing, so we cannot convert a 'nothing' to an integer, so we
+        // have to check for nullity before using the input
+        // null means nothing and '!=' checks if 2 values are not equal, if the condition is met then the statement is true.
+        if (firstNumber != null && secondNumber != null) {
+            println("The sum = ${firstNumber.toInt() + secondNumber.toInt()}")
+        }
+    } catch (e: NumberFormatException) {
+        println("Please make sure to enter a valid number !")
+    }
+    //---------------------------------------------------------------------------------------------------------------
+
 
 }
