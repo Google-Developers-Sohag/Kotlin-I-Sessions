@@ -208,8 +208,19 @@ fun main() {
     // to compare between numbers, the result is a boolean expression
     val condition: Boolean = 1 >= 2
     println("Test operand bigger than or equal : $condition")
+
+    // the not equal operand
     val condition2: Boolean = 1 != 2
-    println("Is 1 equal to 2 ? $condition2")
+    println("Is 1 not equal to 2 ? $condition2")
+
+    // the result is false, because simply the two numbers are equal
+    val condition3: Boolean = 10 != 10
+    println("Is 10 not equal to 10 ? $condition3")
+
+    // the equal operand
+    val conditionB: Boolean = 1 == 1
+    println("Is 1 equal to 1 ? $conditionB")
+
     var age: UInt = 20u
     // checks whether this age is a university student age
     val isStudent: Boolean = age >= 20u
@@ -312,10 +323,14 @@ fun main() {
     println()
     print("Enter first number : ")
     val firstNumber: String? = readLine()
+
     println()
     print("Enter second number : ")
     val secondNumber: String? = readLine()
+
     println()
+
+    //-----Processing the input-----
     // as we have discussed before, the try catch is used to try some tasks and catch an unaccepted actions
     // in this case : the un-accepted action would be if the user has inputted nothing or letters or any non number formats
     // the exception type which is thrown here is the NumberFormatException
