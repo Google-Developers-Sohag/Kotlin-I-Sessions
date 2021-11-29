@@ -5,4 +5,7 @@
 - [Basic Syntax](https://github.com/Google-Developers-Sohag/Kotlin-I-Sessions/releases/download/PDF-2/Basic.Syntax.pdf)
 - [Basics](https://github.com/Google-Developers-Sohag/Kotlin-I-Sessions/blob/master/src/kotlinSessions/SessionOne.kt)
 
+## Session 2 :
+- [More on Loops, Ranges and Exception Handling](https://github.com/Google-Developers-Sohag/Kotlin-I-Sessions/blob/master/src/kotlinSessions/SessionTwo.kt)
+
 
