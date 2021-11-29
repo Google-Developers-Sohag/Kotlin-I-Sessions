@@ -134,7 +134,7 @@ fun main() {
     // In this example, we will guide you step-by-step to build a CLI program to print the
     // multiplication table of a given number.
 
-    // 1) Request user input.
+    // 1) Request user input and convert it to an empty string "" if it was null (assertion).
     val userInput: String = readLine()!!
     // 2) Create a variable to hold some data
     val data: Int
