@@ -1,6 +1,107 @@
 package kotlinSessions
 
+import java.util.function.Consumer
+
 fun main() {
+
+    //--------------------------------Ranges------------------------------------
+
+    // Ranges : define an interval with a lowest value and a highest value.
+    // a range from 1 to 5
+    val testRange = 1..5
+    println("Test Ranges with default ranges (IntRanges)")
+    println("Printing the range $testRange")
+    // all non-fractional (integer) data types have their corresponding range types
+    // Int has IntRange
+    // Long has LongRange
+    // Char has CharRange
+    // the default usage is IntRange for small numbers
+    // for example : doing a range from number (2147483647 + 20) to number (2147483647 + 25) which has 6 numbers in between
+    val minNumber: Long = Int.MAX_VALUE.toLong() + 20
+    val maxNumber: Long = Int.MAX_VALUE.toLong() + 25
+    val testRange2: LongRange = minNumber..maxNumber
+    // print our range as a string
+    println("Test Ranges with longs")
+    println("Printing the range $testRange2")
+    // print our range as numbers, we will see this in more details later in this session
+    for (number in testRange2) {
+        println(number)
+    }
+
+    println("Test Ranges with characters")
+    // test a character range
+    val myAlphas: CharRange = 'A'..'Z'
+    // print our capital alphas
+    for (alpha in myAlphas) {
+        print(alpha)
+    }
+    println()
+    // test our small alphas
+    val mySmallAlphas: CharRange = 'a'..'z'
+    // print our small alphas
+    for (alpha in mySmallAlphas) {
+        print(alpha)
+    }
+    println()
+
+
+    // ---------------Enrichment info--------------For later on-----------
+    // other ways to control our ranges, we will discuss these in more details on future sessions
+    println()
+    myAlphas.forEach {
+        print(it)
+    }
+    println()
+    // using java for-each and a consumer interface
+    mySmallAlphas.forEach(Consumer {
+        print(it)
+    })
+    println()
+
+    // Using the ranges property attributes
+    // Ranges have some property attributes or variables that you can use to describe them or re-define or change them or even creating new ranges
+
+    // 1) example prints those properties
+    val myRangeTest: IntRange = 1..5
+    println("Print the first number ${myRangeTest.first}")
+    println("Print the last number ${myRangeTest.last}")
+    println("Print the step between numbers ${myRangeTest.step}")
+
+    // 2) example shows re-defining a range
+    var myRedefineRange: IntRange = 0..0
+    println("This would print nothing !")
+    myRedefineRange.forEach {
+        println(it)
+    }
+    // now the range is redefined from 0 to 10
+    myRedefineRange = myRedefineRange.first..myRedefineRange.last + 10
+    println("Test my redefined range : ")
+    myRedefineRange.forEach {
+        print(it)
+    }
+    println()
+
+    // 3) using the ranges attributes to build new ranges (either step-ups or step-downs)
+    var myLovelyRange: IntRange = 1..20
+    myLovelyRange.forEach {
+        println(it)
+    }
+    // re-evaluate our range
+    myLovelyRange = myLovelyRange.first + 10..myLovelyRange.last + 20
+    // now print our re-evaluated range
+    println("Print the re-evaluated range !")
+    myLovelyRange.forEach {
+        println(it)
+    }
+    // a progression is a step down range
+    val progression: IntProgression = (myLovelyRange.last downTo myLovelyRange.first)
+    progression.forEach {
+        println(it)
+    }
+    //-----------------------------------------------------------------------------------
+
+    //-----------------------------------------------------------------------------------
+
 
     //---------------------------------Loops----------------------------------
 
@@ -11,18 +112,28 @@ fun main() {
     // println(x + 1) .....
     // we would commonly say
     println("Test for loop")
-    for (number in 0..2 step 1) {
+    // this loop would repeat 3 times starting from number = 0,...number = n + 1.....number = n + 2 and so on till n = 2
+    // within each turn of this loop, we would like to print the current number
+    val range: IntRange = 0..2
+    for (number in range step 1) {
         println(number)
     }
+
+    // we can define the range directly without IntRange or LongRange or Doub
+
 
     // the same code can be written using a while loop with operand inequalities operations (>=, <=, ==, !=)
     println("Test equivalent while loop")
     // var i = 0 and i <= 2 is the same as ordering a looper in the range 0..2
     var i: Int = 0
+    // means that we would execute code inside the while block as long as our i value is less than or equal to 2.
+    // at the first turn i = 0; stills less than 2.
+    // at the 2nd turn i = 1; stills less than 2.
+    // at the 3rd turn i = 2; equals to 2.
+    // at the 4th turn i = 3; not less than or equal to 2; then loop terminates without entering the while block {}.
+    // so the output is 0, 1, 2
     while (i <= 2) {
-        println(i)
-        // equivalent to step 1 in the previous for loop
-        i = i + 1
+        println(i++)
     }
 
     // do while loop is the same as while loop but the first condition is a mandatory condition .
@@ -31,21 +142,15 @@ fun main() {
     // testing a mandatory action with an impossible condition or a false condition.
     i = 0
     do {
-        i = i + 1
-        println(i)
+        // the same as i = i + 1
+        println(++i)
     } while (i > 2)
 
-    // 5) Ranges, a range define an interval with a lowest value and a highest value in an array
-    // a range from 1 to 5
-    val range = 1..5
-    // test for loop with a step factor 1 in the range from 1 to 5
-    for (number in range step 1) {
-        println(number)
-    }
 
     // 6) Jump statements
+    val myRange: IntRange = 1..5
     // break is used to stop the loop block from running
-    for (number in range step 1) {
+    for (number in myRange step 1) {
         println("Before break")
         if (number > 3) {
             println("Inside the condition !")
@@ -56,7 +161,7 @@ fun main() {
     }
 
     // continue is used to skip the lines after it and continue looping
-    for (number in range step 1) {
+    for (number in myRange step 1) {
         println("Before continue")
         if (number > 3) {
             println("Inside the condition !")
@@ -86,7 +191,7 @@ fun main() {
         var result: Int = 1
         // find the product of this range
         for (n in range) {
-            result = n * result
+            result *= n
         }
         println(result)
     } else {
@@ -115,7 +220,7 @@ fun main() {
     var result: Int = 1
     // find the product of this range
     for (n in 1..input) {
-        result = n * result
+        result *= n
     }
     println(result)
 
@@ -136,18 +241,20 @@ fun main() {
 
     // 1) Request user input and convert it to an empty string "" if it was null (assertion).
     val userInput: String = readLine()!!
-    // 2) Create a variable to hold some data
-    val data: Int
+    // 2) Create a variable for the user input
+    val multiplicativeNumber: Int
     // 3) try to convert user input to a number, if it was convertible then use the input
     // otherwise exit with a user message.
     try {
         // try to convert the user input to a number
-        data = userInput.toInt()
+        multiplicativeNumber = userInput.toInt()
         // the block would continue if the input is a number
         // 4) Now let's find our multiplication table for this input, a multiplication table is in range from 1 to 12
-        println("The multiplication table of $data")
+        println("The multiplication table of $multiplicativeNumber")
+        // this loop would repeat 12 times starting from n = 1,...n = n + 1.....n = n + 2 and so on till n = 12
+        // within each turn of this loop, we would like to print the corresponding product
         for (n in 1..12 step 1) {
-            println("$data x $n = ${data * n}")
+            println("$multiplicativeNumber x $n = ${multiplicativeNumber * n}")
         }
     } catch (e: NumberFormatException) {
         // gets executed if the input is not a number
