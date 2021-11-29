@@ -303,6 +303,39 @@ fun main() {
     }
     //-----------------------------------------------------------------------------------------
 
+    //--------------------------------------- Null values---------------------------------------------
+
+    // null : means nothing and when a variable is null, it doesn't have a registered memory
+    // imagine you have a bowl (memory) and that bowl is empty (null memory), its not logical to try to use what's inside the bowl
+    // the same thing goes with any variable, if the variable is null, you cannot use it
+    // a variable must hold a valid value, so you can use it
+
+    // an example of an invalid variable
+    // '?' is the Elvis operator, used to register a variable as a nullable variable
+    var variable: Int? = null
+    // if you try to use this variable as a number, the program will not start and will give out an error
+    // println(variable * 2)
+    // Kotlin: Operator call corresponds to a dot-qualified call 'variable.times(2)' which is not allowed on a nullable receiver 'variable'.
+    // that means that you cannot use (*) the times operator on an invalid target !
+    // if we re-evaluate our variable by a number that will enable us to use the (*) times operator
+    variable = 2
+    println(variable * 2)
+    // On some occasions, we want to be safe from errors resulting from using an invalid variable to do some operations
+    // in this case we can check if the variable isn't invalid
+    // using an `if` block and a `!=` (not equal operand operator); the result would be either true if the variable is valid or false otherwise
+    // if the condition of `if statement` is true then the `if block` is executed, otherwise if the condition is false then the `else block` would run
+    // in that case we would never get an error from using a nullable variable (invalidated variable).
+    if (variable != null) {
+        println(variable * 5)
+    } else {
+        println("The varibale is invalid !")
+    }
+    // the usage of this would become more obvious when we have a user input and we want to ensure the user input is a valid input
+    // the last example on this sessions explains this !
+
+    //--------------------------------------------------------------------------------------------------------------------
+
+
     //-----------------------------------------Dealing with console----------------------------------------------
 
     // Dealing with console : means accepting user input from the console and sending output messages back to the
