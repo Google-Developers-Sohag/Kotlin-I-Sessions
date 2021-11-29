@@ -330,6 +330,8 @@ fun main() {
     } else {
         println("The varibale is invalid !")
     }
+    // the usage of this would become more obvious when we have a user input and we want to ensure the user input is a valid input
+    // the last example on this sessions explains this !
 
     //--------------------------------------------------------------------------------------------------------------------
 
