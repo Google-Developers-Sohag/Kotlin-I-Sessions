@@ -311,7 +311,7 @@ fun main() {
     // a variable must hold a valid value, so you can use it
 
     // an example of an invalid variable
-    // '?' is the Elvis operator, used to make a variable as a nullable variable
+    // '?' is the Elvis operator, used to register a variable as a nullable variable
     var variable: Int? = null
     // if you try to use this variable as a number, the program will not start and will give out an error
     // println(variable * 2)
