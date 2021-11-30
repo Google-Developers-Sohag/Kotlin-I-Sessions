@@ -1,6 +1,5 @@
 package kotlinSessions
 
-import java.util.function.Consumer
 
 fun main() {
 
@@ -48,14 +47,11 @@ fun main() {
     // ---------------Enrichment info--------------For later on-----------
     // other ways to control our ranges, we will discuss these in more details on future sessions
     println()
+    // a foreach function :  Performs the given [action] on each element, each element is represented by it on its turn.
+    // its equivalent to the regular for loops discussed in this session.
     myAlphas.forEach {
         print(it)
     }
-    println()
-    // using java for-each and a consumer interface
-    mySmallAlphas.forEach(Consumer {
-        print(it)
-    })
     println()
 
     // Using the ranges property attributes
