@@ -115,7 +115,7 @@ fun main() {
     // previously we have discussed that we can make a list of any data type, the list should be only of one data type
     // in this part, we will show you how to make a hybrid list that has different data types
 
-    // to make a hybrid list, use listOf directly without declaring a type
+    // to make a hybrid list, use listOf directly without declaring a type or else use List<Any>
     // a list of Strings, numbers and lists
     val hybridList = listOf("Harry", 40u, "Married", "0 Children", listOf<String>( "Physician", "Oxford university"))
     // now let's make this ID card for Harry
@@ -142,6 +142,13 @@ fun main() {
     println("Work : ")
     print(work)
     println("--------------------------------------------------------")
+
+    // '<>' are called the generic type angular brackets, they are used to restrict the declaration to a specific type (explicit type inference).
+    // using '<Any?>' as a type can even accept nullable types and its equivalent of the wildcard operator '<*>'
+    val testHybridList: List<Any?> = listOf(null, 40u, "Married", "0 Children", listOf<String>( "Physician", "Oxford university"))
+    testHybridList.forEach {
+        println(it)
+    }
 
     //------------------------------------------------------------------------------------------------------------
 
