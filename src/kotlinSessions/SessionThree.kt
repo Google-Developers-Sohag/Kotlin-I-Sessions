@@ -144,12 +144,39 @@ fun main() {
     println("--------------------------------------------------------")
 
     // '<>' are called the generic type angular brackets, they are used to restrict the declaration to a specific type (explicit type inference).
-    // using '<Any?>' as a type can even accept nullable types and its equivalent of the wildcard operator '<*>'
+    // using '<Any?>' as a type can even accept nullable types and its equivalent to the wildcard operator '<*>'
     val testHybridList: List<Any?> = listOf(null, 40u, "Married", "0 Children", listOf<String>( "Physician", "Oxford university"))
     testHybridList.forEach {
         println(it)
     }
 
-    //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------Dynamic Arrays Using ArrayLists------------------------------------------------------------------
+    // Dynamic arrays : are those types of List<*> that are of expandable size by nature.
+    // In ArrayLists : adding the elements could be managed after the initialization statement.
+    val testDynamicList: ArrayList<Any?> = ArrayList()
+    // adding elements to our dynamic array.
+    testDynamicList.add("MyName")
+    println("My array Size = ${testDynamicList.size}")
+    testDynamicList.add(50u)
+    println("My array Size = ${testDynamicList.size}")
+    testDynamicList.addAll(testHybridList)
+    println("My array Size = ${testDynamicList.size}")
+
+    // extract the data from our dynamic array
+    for (item0 in testDynamicList) {
+        println(item0)
+    }
+    // to delete all items from our array do call clear() function
+    testDynamicList.clear()
+    // now let's re-check them
+    println("My array Size = ${testDynamicList.size}")
+    testDynamicList.forEach{
+        println(it)
+    }
+    //------------------------------------------------------------------------------------------------------------------------------
+
 
 }
+
+
+
