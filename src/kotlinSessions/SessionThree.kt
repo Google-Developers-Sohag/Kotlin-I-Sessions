@@ -3,9 +3,34 @@ package kotlinSessions
 /**
  * The main class is the entry point of your application.
  */
+
 fun main() {
-    //--------------------------------------Arrays--------------------------------------
+    //---------------------------------------Arrays----------------------------------------------
+    // to define an Array use the type Array<Type> which will define an array of a specific type
+    val studentNames: Array<String> = arrayOf("Maged", "Abdo")
+    studentNames.forEach {
+        println(it)
+    }
+    // another way to define arrays of fixed size.
+    // the block {} is called an initialize phase for the constructor, it creates default values for our array while initializing it using the indices
+    val students: Array<String> = Array(3) {
+        index: Int -> "Name"
+    }
+    students.forEach {
+        println(it)
+    }
+    // modifying our array
+    students[0] = "Maged"
+    students[1] = "Mena"
+    students[2] = "Morad"
+    students.forEach {
+        println(it)
+    }
+    //----------------------------------------------------------------------------------------------
+
+    //--------------------------------------Lists--------------------------------------
     // You can make a list from any data type described, for example :
+    // lists are very similar to arrays.
     // list of students class names. --- as an example for a list of Strings.
     // list of students degrees. --- as an example for a list of unsigned floats.
     // list of shopping items. --- as an example for a list of Strings.
