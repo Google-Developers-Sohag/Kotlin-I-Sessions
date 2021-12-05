@@ -6,6 +6,10 @@ package kotlinSessions
 
 fun main() {
     //---------------------------------------Arrays----------------------------------------------
+    // An Array : is a list of some items, the items can be of Any type.
+    // the items have an order starting from (0) to (size - 1) and we usually call it an index.
+    // to get a particular item from an array, we append the subscript notation '[]' to our variable name and write our corresponding index inside
+    // asserting that its within the array range (0, size - 1).
     // to define an Array use the type Array<Type> which will define an array of a specific type
     val studentNames: Array<String> = arrayOf("Maged", "Abdo")
     studentNames.forEach {
@@ -26,6 +30,26 @@ fun main() {
     students.forEach {
         println(it)
     }
+    // print our size
+    println("Array Size = ${students.size}")
+
+    //printing our items using ranges
+    for (index in students.indices step 1) {
+        println(students[index])
+    }
+    // print the array items in a reverse order
+    // define an IntProgression using the first and the last index of our array
+    val progression: IntProgression = (students.size - 1) downTo 0
+    // now print them out
+    for (index in progression step 1) {
+        println(students[index])
+    }
+    // an equivalent code
+    val reversedArray: Array<String> = students.reversedArray()
+    reversedArray.forEach {
+        println(it)
+    }
+
     //----------------------------------------------------------------------------------------------
 
     //--------------------------------------Lists--------------------------------------
