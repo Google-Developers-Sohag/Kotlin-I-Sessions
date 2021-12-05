@@ -1,6 +1,10 @@
 package kotlinSessions
 
-
+/**
+ * The main method is the application entry point.
+ *
+ * @author pavl_g.
+ */
 fun main() {
 
     //--------------------------------Ranges------------------------------------
