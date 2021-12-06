@@ -4,6 +4,8 @@ package kotlinSessions
  * The main method is the entry point for any application in almost all
  * programming languages including kotlin, write all your executable code here.
  * NB : Comments represent non-compilable and non-executable code.
+ *
+ * @author pavl_g.
  */
 fun main() {
 
