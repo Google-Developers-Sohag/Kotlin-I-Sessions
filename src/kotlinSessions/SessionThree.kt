@@ -2,8 +2,9 @@ package kotlinSessions
 
 /**
  * The main class is the entry point of your application.
+ *
+ * @author pavl_g.
  */
-
 fun main() {
     //---------------------------------------Arrays----------------------------------------------
     // An Array : is a list of some items, the items can be of Any type.
