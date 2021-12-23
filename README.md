@@ -8,7 +8,14 @@
 ## Session 2 :
 - [More on Loops, Ranges and Exception Handling](https://github.com/Google-Developers-Sohag/Kotlin-I-Sessions/blob/master/src/kotlinSessions/SessionTwo.kt)
 
+## Session 3 : 
+- [Arrays, Lists and more on loops and hybrid arrays](https://github.com/Google-Developers-Sohag/Kotlin-I-Sessions/blob/master/src/kotlinSessions/SessionThree.kt)
 
+## Session 4 :
+- [Unit functions and Type Return functions](https://github.com/Google-Developers-Sohag/Kotlin-I-Sessions/blob/master/src/kotlinSessions/SessionFour.kt)
+
+## Revision :
+--WPI--
 
 -------------------------------------------------------------
 #### Based On : 
